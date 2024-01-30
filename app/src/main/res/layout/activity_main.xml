@@ -1,33 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    android:background="@color/black"
+    tools:context=".view.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/EqualBtm"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="@drawable/operation_btm_style"
+        android:text="="
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/DotBtm" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ZeroBtm"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/number_brm_style"
+        android:text="0"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/DotBtm"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent=".5" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/DotBtm"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="."
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/EqualBtm"
+        app:layout_constraintHorizontal_weight="1"
 
-    <include layout="@layout/content_main" />
+        app:layout_constraintStart_toEndOf="@+id/ZeroBtm" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/PlusBtm"
+        android:layout_width="75dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/operation_btm_style"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/EqualBtm"
+
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minusBtm"
+        android:layout_width="75dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/operation_btm_style"
+        android:text="-"
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/PlusBtm"
+
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/MultiblyBtm"
+        android:layout_width="75dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/operation_btm_style"
+        android:text="*"
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/minusBtm"
+
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/DevidedBtm"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginHorizontal="15dp"
+        android:background="@drawable/operation_btm_style"
+        android:text="/"
+        android:layout_marginBottom="15dp"
+
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm2"
+        app:layout_constraintEnd_toStartOf="@+id/clearBtm"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clearBtm"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+
+        android:background="@drawable/operation_btm_style"
+        android:text="C"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/white"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm3"
+        app:layout_constraintEnd_toStartOf="@+id/MultiblyBtm"
+
+        app:layout_constraintStart_toEndOf="@+id/DevidedBtm">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm8"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="8"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/ZeroBtm"
+        app:layout_constraintEnd_toStartOf="@+id/Btm9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/Btm7" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm9"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="9"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/DotBtm"
+        app:layout_constraintEnd_toStartOf="@+id/EqualBtm"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/Btm8" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm7"
+        android:layout_width="wrap_content"
+
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="7"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/ZeroBtm"
+        app:layout_constraintEnd_toStartOf="@+id/Btm8"
+
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- 654-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm6"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="6"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm9"
+        app:layout_constraintEnd_toStartOf="@+id/PlusBtm"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btm5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm5"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="5"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm8"
+        app:layout_constraintEnd_toStartOf="@+id/Btm6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btm4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm4"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="4"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm7"
+        app:layout_constraintEnd_toStartOf="@+id/Btm5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!-- 123-->
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm3"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm6"
+        app:layout_constraintEnd_toStartOf="@+id/minusBtm"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btm2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm2"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm5"
+        app:layout_constraintEnd_toStartOf="@+id/Btm3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Btm1" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Btm1"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/number_brm_style"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="#29A8FF"
+        android:textFontWeight="500"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/Btm4"
+        app:layout_constraintEnd_toStartOf="@+id/Btm2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/ShowNumber"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity=""
+            android:paddingLeft="10dp"
+            android:scrollbars="vertical"
+
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:textFontWeight="500"
+
+            android:textSize="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/MultiblyBtm"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
